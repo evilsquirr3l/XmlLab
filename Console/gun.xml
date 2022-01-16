@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Gun xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Model>
+        <Id>0</Id>
+        <Name/>
+    </Model>
+    <Handy>OneHand</Handy>
+    <Origin>
+        <Country/>
+        <ProductionYear>0</ProductionYear>
+    </Origin>
+    <Ttc>
+        <Range>Close</Range>
+        <ShootingRange>0</ShootingRange>
+        <HasClip>false</HasClip>
+        <HasOptics>false</HasOptics>
+    </Ttc>
+    <Materials>
+        <string>Steel</string>
+        <string>Brass</string>
+        <string>Iron</string>
+        <string>Aluminium</string>
+    </Materials>
+</Gun>

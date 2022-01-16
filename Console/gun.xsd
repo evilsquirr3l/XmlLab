@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Gun" type="GunType"/>
+  <xs:complexType name="ModelType">
+    <xs:sequence>
+      <xs:element type="xs:byte" name="Id"/>
+      <xs:element type="xs:string" name="Name"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OriginType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Country"/>
+      <xs:element name="ProductionYear">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TtcType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Range"/>
+      <xs:element type="xs:byte" name="ShootingRange"/>
+      <xs:element type="xs:string" name="HasClip"/>
+      <xs:element type="xs:string" name="HasOptics"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MaterialsType">
+    <xs:sequence>
+      <xs:element name="string" maxOccurs="unbounded" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Steel"/>
+            <xs:enumeration value="Brass"/>
+            <xs:enumeration value="Iron"/>
+            <xs:enumeration value="Aluminium"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GunType">
+    <xs:sequence>
+      <xs:element type="ModelType" name="Model"/>
+      <xs:element type="xs:string" name="Handy"/>
+      <xs:element type="OriginType" name="Origin"/>
+      <xs:element type="TtcType" name="Ttc"/>
+      <xs:element type="MaterialsType" name="Materials"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
