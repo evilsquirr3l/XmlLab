@@ -10,7 +10,7 @@ public static class XmlHelper
     public static void XmlToJson()
     {
         var xDoc = new XmlDocument();
-        xDoc.Load("guns.xml");
+        xDoc.Load("../../../guns.xml");
         var xRoot = xDoc.DocumentElement;
 
         var childNodes = xRoot!.SelectNodes("*")!;
@@ -23,7 +23,7 @@ public static class XmlHelper
         var guns = new List<Gun>();
 
         var xDoc = new XmlDocument();
-        xDoc.Load("guns.xml");
+        xDoc.Load("../../../guns.xml");
         var xRoot = xDoc.DocumentElement;
 
         var childNodes = xRoot!.SelectNodes("*")!;
@@ -63,10 +63,10 @@ public static class XmlHelper
     public static void ValidateXml()
     {
         var schema = new XmlSchemaSet();
-        schema.Add("", "gun.xsd");
+        schema.Add("", "../../../gun.xsd");
 
         var xmlDoc = new XmlDocument();
-        xmlDoc.Load("invalid.xml");
+        xmlDoc.Load("../../../invalid.xml");
         xmlDoc.Schemas.Add(schema);
         xmlDoc.Validate(ValidationEventHandler!);
     }
